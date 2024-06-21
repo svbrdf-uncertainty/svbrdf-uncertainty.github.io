@@ -1,5 +1,6 @@
 body {
   font-family: "freight-sans-pro", sans-serif;
+  font-size: 16px;
 }
 
 
@@ -115,10 +116,8 @@ body {
 }
 
 .results-carousel .item {
-  margin: 5px;
   overflow: hidden;
   padding: 20px;
-  font-size: 0;
 }
 
 .results-carousel video {
