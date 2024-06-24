@@ -386,7 +386,7 @@
                     <h3 class="title is-4">Reflection as Convolution</h3>
                     <p>The signal processing framework for inverse rendering (Ramamoorthi and Hanrahan, 2001) shows that
                       the reflection equation can be
-                      regarded as a rotational convolution of the BRDF kernel with the incoming light over the incoming-
+                      approximated as a rotational convolution of the BRDF kernel with the incoming light over the incoming-
                       and outgoing light directions at a point on the surface. This perspective allows us to study
                       inverse
                       rendering in the <i>frequency domain</i>, here the spherical harmonics domain.</p>
@@ -433,7 +433,7 @@
               <div class="columns">
                 <div class="column is-8">
                   <div class="content">
-                    <h3 class="title is-4">Shadowing and Masking</h3>
+                    <h3 class="title is-4">BRDF Recover with Shadowing and Masking</h3>
                     <p>Our second contribution is to use these coefficients in a BRDF optimization pipeline to estimate
                       parameters for an analytic microfacet BRDF. We improve the accuracy of the convolution model by
                       incorporating shadowing and masking.</p>
@@ -451,7 +451,7 @@
                 <h3 class="title is-4">Power Spectrum Approximation</h3>
                 <p>Our third contribution is to develop an extremely light-weight approximation of the convolution model
                   that operates completely in the power spectrum of the spherical harmonics. This allows us to explore
-                  hundreds of BRDF parameter combinations in a couple of milliseconds.</p>
+                  hundreds of BRDF parameter combinations in a couple of milliseconds. Moreover, the power spectrum is invariant to rotations of local coordinate frame (here, rotated normals).</p>
                 <img src="static/images/power_spectrum.png"
                   alt="An image showing three plots, representing power spectra. The first plot is the power spectrum of the incoming light, the second plot of the BRDF and the third of the outgoing light. On the second plot, the graph shows alternative plots for different parameter combinations." />
               </div>
