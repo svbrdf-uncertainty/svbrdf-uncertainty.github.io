@@ -6,12 +6,12 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description"
-    content="Project page for Fast and Uncertainty-Aware SVBRDF Recovery from Multi-View Capture using Frequency Domain Analysis">
+    content="Project page for Uncertainty for SVBRDF Acquisition using Frequency Analysis">
   <meta property="og:title"
-    content="Fast and Uncertainty-Aware SVBRDF Recovery from Multi-View Capture using Frequency Domain Analysis" />
+    content="Uncertainty for SVBRDF Acquisition using Frequency Analysis" />
   <meta property="og:description"
-    content="Relightable object acquisition is a key challenge in simplifying digital asset creation. We approach this problem by leveraging frequency domain analysis, enabling fast optimization and a measure of uncertainty based on entropy." />
-  <meta property="og:url" content="https://brdf-uncertainty.github.io" />
+    content="We quantify uncertainty for SVBRDF acquisition from multi-view captures using entropy. The otherwise heavy computation is accelerated in the frequency domain, yielding a practical, efficient method." />
+  <meta property="og:url" content="https://svbrdf-uncertainty.github.io" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200" />
@@ -19,9 +19,9 @@
 
 
   <meta name="twitter:title"
-    content="Fast and Uncertainty-Aware SVBRDF Recovery from Multi-View Capture using Frequency Domain Analysis">
+    content="Uncertainty for SVBRDF Acquisition using Frequency Analysis">
   <meta name="twitter:description"
-    content="Relightable object acquisition is a key challenge in simplifying digital asset creation. We approach this problem by leveraging frequency domain analysis, enabling fast optimization and a measure of uncertainty based on entropy.">
+    content="We quantify uncertainty for SVBRDF acquisition from multi-view captures using entropy. The otherwise heavy computation is accelerated in the frequency domain, yielding a practical, efficient method.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -31,7 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Fast and Uncertainty-Aware SVBRDF Recovery from Multi-View Capture using Frequency Domain Analysis</title>
+  <title>Uncertainty for SVBRDF Acquisition using Frequency Analysis</title>
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/fiu3sit.css">
@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script defer data-domain="brdf-uncertainty.github.io" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="svbrdf-uncertainty.github.io" src="https://plausible.io/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -60,15 +60,14 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-left">
-            <h1 class="title is-2 publication-title">Fast and Uncertainty-Aware SVBRDF Recovery from Multi-View Capture
-              using Frequency Domain Analysis</h1>
+            <h1 class="title is-2 publication-title">Uncertainty for SVBRDF Acquisition using Frequency Analysis</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 Anonymous authors,</span>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">ArXiv 2024</span>
+                <span class="author-block">SIGGRAPH 2025</span>
               </div>
             </div>
             <div class="column has-text-left">
@@ -153,25 +152,14 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-left">
             <p>
-              Relightable object acquisition is a key challenge in simplifying digital asset creation.
-              Complete reconstruction of an object typically requires capturing hundreds to thousands of photographs
-              under controlled illumination, with specialized equipment.
-              The recent progress in differentiable rendering improved the quality and accessibility of inverse
-              rendering optimization.
-              Nevertheless, under uncontrolled illumination and unstructured viewpoints, there is no guarantee that the
-              observations contain enough information to reconstruct the appearance properties of the captured object.
-            </p>
-            <p>
-              We thus propose to consider the acquisition process from a signal-processing perspective.
-              Given an object's geometry and a lighting environment, we estimate the properties of the materials on the
-              object's surface in seconds.
-              We do so by leveraging frequency domain analysis, considering the recovery of material properties as a
-              deconvolution, enabling fast error estimation.
-              We then quantify the uncertainty of the estimation, based on the available data, highlighting the areas
-              for which priors or additional samples would be required for improved acquisition quality.
-              We compare our approach to previous work and quantitatively evaluate our results, showing similar quality
-              as previous work in a fraction of the time, and providing key information about the certainty of the
-              results.
+              This paper aims to quantify uncertainty for SVBRDF acquisition.
+              Under uncontrolled illumination and unstructured viewpoints, there is no guarantee that the observations contain enough information to reconstruct the appearance properties of a captured object.
+              We study this ambiguity, or uncertainty, using entropy and accelerate the analysis by using the frequency domain, rather than the domain of incoming and outgoing viewing angles.
+              The result is a method that computes a map of uncertainty over an entire object within a millisecond.
+              We first validate that the frequency model allows us to recover SVBRDF parameters with competitive performance,
+              that the accelerated entropy computation matches results with a physically-based path tracer,
+              and that there is a positive correlation between error and uncertainty.
+              We then show that the uncertainty map can be applied to improve SVBRDF acquisition using capture guidance, sharing information on the surface, and using a diffusion model to inpaint uncertain regions.
             </p>
           </div>
         </div>
