@@ -317,15 +317,7 @@
               alt="Results showing a BRDF texture that was optimized with Mitsuba. On the right, the error is shown and a map of the uncertainty." />
             <br /><br />
             <p>
-              On the right, we show the average estimation error followed by our entropy estimation. We observe that low
-              entropy is indicative of lower error, suggesting that it captures the sufficiency of information in the
-              input signal. On the dice example (top row), the `one'-face is lit less than other faces and we observe
-              highlights with lower intensity, leading to higher entropy. While we still recover the white albedo
-              correctly, the estimation of roughness and metallicity for the dot has a high error. Similarly, the inside
-              and lower parts of the doughnut are less observed and not lit by strong light sources. Again, entropy is
-              high in regions of high error (especially in metallicity). The triceratops collar is down-facing and not
-              well-lit and our entropy captures the lack of observation that leads to high error in the metallicity
-              part.
+              We observe that where there is error, entropy tends to be higher. We also show a mask for above-average MSE and entropy. The Mask Coverage column shows which regions of the MSE mask are not covered by the entropy mask and should, ideally, be completely black.
             </p>
           </div>
         </div>
