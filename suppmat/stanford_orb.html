@@ -1,0 +1,2096 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford ORB Results - Uncertainty for SVBRDF Acquisition using Frequency Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        model-viewer {
+            width: 100%;
+            height: 200px;
+        }
+        img.input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Uncertainty for SVBRDF Acquisition using Frequency Analysis</a>
+    </nav>
+
+    <div class="container-fluid">
+        <h1 class="mt-5">Stanford ORB Results</h1>
+        <br />
+        <div class="alert alert-warning" role="alert">
+        <p>To inspect the results, please run the following commands in terminal. These commands change directory to this folder and start a simple python webserver, so the 3D models can be loaded locally.</p>
+        <code>
+            cd path_to_supplemental<br />
+            python -m http.server
+        </code> 
+        <p>Then go to <a href="http://localhost:8000/stanford_orb.html">localhost:8000/stanford_orb.html</a> in your webbrowser.</p>
+        <p>Now you should see the interactive 3D models with the output textures from the methods compared in the paper.</p>
+        </div>
+        <br />
+
+        <div class="row">
+            <!--- Headings -->
+            <div class="col-md-1">
+                <strong>Input</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Method</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Entropy</strong>
+                <div class="alert alert-success" role="alert">
+                Entropy scale differs (see section 4.2)
+                </div>
+            </div>
+            <div class="col-md-1">
+                <strong>Base color</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Roughness</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Metallic</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Relight 1</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Relight 2</strong>
+            </div>
+            <div class="col-md-1">
+                <strong>Relight 3</strong>
+            </div>
+        </div>
+        <hr />
+
+        <!--- Start results output --->
+
+        <h3>Baking</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/baking/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/baking/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Ball</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/ball/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/ball/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Blocks</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/blocks/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/blocks/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Cactus</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/cactus/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cactus/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Car</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/car/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/car/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Chips</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/chips/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/chips/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Cup</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/cup/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/cup/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Curry</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/curry/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/curry/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Gnome</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/gnome/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/gnome/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Grogu</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/grogu/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/grogu/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Pepsi</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/pepsi/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pepsi/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Pitcher</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/pitcher/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/pitcher/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Salt</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/salt/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/salt/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+                <h3>Teapot</h3><hr />
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/input1.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model</strong> (5.07s)<br />Entropy (0.0005s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_entropy" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_base_color" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_roughness" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_metallic" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/input2.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>SH Model + Mitsuba</strong> (16.07s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_base_color" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_roughness" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="sh_mi_metallic" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_mi_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_mi_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_mi_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/input3.png" />
+            </div>
+            <div class="col-md-1">
+                <strong>Mitsuba</strong> (52.49s)<br />Entropy (5m50s)
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_entropy" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_base_color" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_roughness" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="mi_metallic" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/sh_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>NVDiffRec</strong> (142.14s)
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_base_color" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_roughness" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <model-viewer alt="Model preview" camera-orbit="0deg 180deg" class="nvdiffrec_metallic" src="stanford_orb_results/teapot/mesh.gltf" ar shadow-intensity="0" camera-controls touch-action="pan-y"></model-viewer>
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/nvdiffrec_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/nvdiffrec_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/nvdiffrec_relight3.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <strong>Ground Truth</strong>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/gt_relight1.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/gt_relight2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="input" src="stanford_orb_results/teapot/gt_relight3.png" />
+            </div>
+        </div>
+        <hr />
+        
+        <!--- End results output --->
+    </div>
+
+    <script>
+        document.querySelectorAll('model-viewer').forEach(shape => {
+            shape.addEventListener('load', () => {
+                const material = shape.model.materials[0];
+                const createAndApplyTexture = async () => {
+                    const texture = await shape.createTexture(shape.src.replace('mesh.gltf', shape.className + '.png'));
+                    material['emissiveTexture'].setTexture(texture);
+                }
+                createAndApplyTexture();
+            });
+        });
+    </script>
+    <!-- Import the modelviewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>
