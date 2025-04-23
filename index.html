@@ -200,6 +200,28 @@
   </section>
   <!--End method overview -->
 
+    <!-- Uncertainty -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="content">
+            <h2 class="title is-3">Uncertainty results</h2>
+            <p>We show that our formulation for uncertainty using entropy matches with errors resulting from an
+              optimization with Mitsuba.</p>
+            <br />
+            <img src="static/images/uncertainty.png"
+              alt="Results showing a BRDF texture that was optimized with Mitsuba. On the right, the error is shown and a map of the uncertainty." />
+            <br /><br />
+            <p>
+              We observe that where there is error, entropy tends to be higher. We also show a mask for above-average MSE and entropy. The Mask Coverage column shows which regions of the MSE mask are not covered by the entropy mask and should, ideally, be completely black.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End uncertainty -->
+  </section>
+
   <!-- Results -->
   <section class="section">
     <!-- Relighting -->
@@ -303,28 +325,6 @@
       </div>
     </section>
     <!-- End relighting -->
-
-    <!-- Uncertainty -->
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="content">
-            <h2 class="title is-3">Uncertainty results</h2>
-            <p>We show that our formulation for uncertainty using entropy matches with errors resulting from an
-              optimization with Mitsuba.</p>
-            <br />
-            <img src="static/images/uncertainty.png"
-              alt="Results showing a BRDF texture that was optimized with Mitsuba. On the right, the error is shown and a map of the uncertainty." />
-            <br /><br />
-            <p>
-              We observe that where there is error, entropy tends to be higher. We also show a mask for above-average MSE and entropy. The Mask Coverage column shows which regions of the MSE mask are not covered by the entropy mask and should, ideally, be completely black.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End uncertainty -->
-  </section>
 
   <!--Signal processing recap -->
   <section class="section hero is-light is-small" id="method">
