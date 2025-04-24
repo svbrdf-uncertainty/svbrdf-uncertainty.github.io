@@ -5,10 +5,8 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description"
-    content="Project page for Uncertainty for SVBRDF Acquisition using Frequency Analysis">
-  <meta property="og:title"
-    content="Uncertainty for SVBRDF Acquisition using Frequency Analysis" />
+  <meta name="description" content="Project page for Uncertainty for SVBRDF Acquisition using Frequency Analysis">
+  <meta property="og:title" content="Uncertainty for SVBRDF Acquisition using Frequency Analysis" />
   <meta property="og:description"
     content="We quantify uncertainty for SVBRDF acquisition from multi-view captures using entropy. The otherwise heavy computation is accelerated in the frequency domain, yielding a practical, efficient method." />
   <meta property="og:url" content="https://svbrdf-uncertainty.github.io" />
@@ -18,8 +16,7 @@
   <meta property="og:image:height" content="630" />
 
 
-  <meta name="twitter:title"
-    content="Uncertainty for SVBRDF Acquisition using Frequency Analysis">
+  <meta name="twitter:title" content="Uncertainty for SVBRDF Acquisition using Frequency Analysis">
   <meta name="twitter:description"
     content="We quantify uncertainty for SVBRDF acquisition from multi-view captures using entropy. The otherwise heavy computation is accelerated in the frequency domain, yielding a practical, efficient method.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
@@ -63,13 +60,20 @@
             <h1 class="title publication-title">Uncertainty for SVBRDF Acquisition using Frequency Analysis</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block"><a href="https://rubenwiersma.nl/" target="_blank">Ruben Wiersma</a><sup>1, 2, 3</sup>,</span>
-              <span class="author-block"><a href="https://julienphilip.com/" target="_blank">Julien Philip</a><sup>2, 4</sup>,</span>
-              <span class="author-block"><a href="https://miloshasan.net/" target="_blank">Milos Hasan</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="https://krishnamullia.com/" target="_blank">Krishna Mullia</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="https://luanfujun.com/" target="_blank">Fujun Luan</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="https://graphics.tudelft.nl/" target="_blank">Elmar Eisemann</a><sup>3</sup>,</span>
-              <span class="author-block"><a href="https://valentin.deschaintre.fr" target="_blank">Valentin Deschaintre</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://rubenwiersma.nl/" target="_blank">Ruben Wiersma</a><sup>1, 2,
+                  3</sup>,</span>
+              <span class="author-block"><a href="https://julienphilip.com/" target="_blank">Julien Philip</a><sup>2,
+                  4</sup>,</span>
+              <span class="author-block"><a href="https://miloshasan.net/" target="_blank">Milos
+                  Hasan</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://krishnamullia.com/" target="_blank">Krishna
+                  Mullia</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://luanfujun.com/" target="_blank">Fujun
+                  Luan</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://graphics.tudelft.nl/" target="_blank">Elmar
+                  Eisemann</a><sup>3</sup>,</span>
+              <span class="author-block"><a href="https://valentin.deschaintre.fr" target="_blank">Valentin
+                  Deschaintre</a><sup>2</sup></span>
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><sup>1</sup>ETH Z&uuml;rich</span>
                 <span class="author-block"><sup>2</sup>Adobe Research</span>
@@ -84,8 +88,7 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="#" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -93,9 +96,20 @@
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link -->
+                <!-- Appendix PDF link -->
                 <span class="link-block">
-                  <a href="/suppmat" target="_blank"
+                  <a href="suppmat/appendix.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Appendix</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary website link -->
+                <span class="link-block">
+                  <a href="suppmat/index.html" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-plus"></i>
@@ -106,11 +120,22 @@
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/rubenwiersma/svbrdf_uncertainty" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code (to be released)</span>
+                  </a>
+                </span>
+
+                <!-- BibTex link -->
+                <span class="link-block">
+                  <a href="#bibtex" class="internal-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-quote-left"></i>
+                    </span>
+                    <span>Cite us</span>
                   </a>
                 </span>
 
@@ -128,7 +153,9 @@
       <div class="hero-body">
         <img src="static/images/teaser.jpg" alt="Overview image." />
         <h2 class="subtitle has-text-left">
-          We quantify uncertainty for SVBRDF acquisition from multi-view captures (left) using entropy (right). We significantly accelerate the, otherwise heavy, computation in the frequency domain (Spherical Harmonics), yielding a practical, efficient method.
+          We quantify uncertainty for SVBRDF acquisition from multi-view captures (left) using entropy (right). We
+          significantly accelerate the, otherwise heavy, computation in the frequency domain (Spherical Harmonics),
+          yielding a practical, efficient method.
         </h2>
       </div>
     </div>
@@ -143,7 +170,16 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-left">
             <p>
-              This paper aims to quantify uncertainty for SVBRDF acquisition in multi-view captures. Under uncontrolled illumination and unstructured viewpoints, there is no guarantee that the observations contain enough information to reconstruct the appearance properties of a captured object. We study this ambiguity, or uncertainty, using entropy and accelerate the analysis by using the frequency domain, rather than the domain of incoming and outgoing viewing angles. The result is a method that computes a map of uncertainty over an entire object within a millisecond. We find that the frequency model allows us to recover SVBRDF parameters with competitive performance, that the accelerated entropy computation matches results with a physically-based path tracer, and that there is a positive correlation between error and uncertainty. We then show that the uncertainty map can be applied to improve SVBRDF acquisition using capture guidance, sharing information on the surface, and using a diffusion model to inpaint uncertain regions.
+              This paper aims to quantify uncertainty for SVBRDF acquisition in multi-view captures. Under uncontrolled
+              illumination and unstructured viewpoints, there is no guarantee that the observations contain enough
+              information to reconstruct the appearance properties of a captured object. We study this ambiguity, or
+              uncertainty, using entropy and accelerate the analysis by using the frequency domain, rather than the
+              domain of incoming and outgoing viewing angles. The result is a method that computes a map of uncertainty
+              over an entire object within a millisecond. We find that the frequency model allows us to recover SVBRDF
+              parameters with competitive performance, that the accelerated entropy computation matches results with a
+              physically-based path tracer, and that there is a positive correlation between error and uncertainty. We
+              then show that the uncertainty map can be applied to improve SVBRDF acquisition using capture guidance,
+              sharing information on the surface, and using a diffusion model to inpaint uncertain regions.
             </p>
           </div>
         </div>
@@ -161,7 +197,7 @@
           <div class="column is-four-fifths">
             <div class="content">
               <h2 class="title is-3">Problem statement</h2>
-              <p>The reflections we observe from an object inform us about the properties of its material.
+              <p>The reflections from an object reveal its material properties.
                 Sometimes, it is difficult to know what material we are dealing with if we miss
                 certain reflections or if a part of the object is in the shade. This can happen, for example, on a
                 cloudy
@@ -187,7 +223,7 @@
             <div class="content">
               <h2 class="title is-3">Overview</h2>
               <p>The question whether we have the right lighting- and viewing conditions can be posed as a question of
-                uncertainty. In this paper, we aim to quantify this uncertainty. Our work differs from recent
+                uncertainty. In this paper, we aim to quantify this uncertainty using entropy. Our work differs from recent
                 contributions on
                 uncertainty in inverse rendering by approaching the reflection equation from the signal processing
                 framework
@@ -226,7 +262,9 @@
               alt="Results showing a BRDF texture that was optimized with Mitsuba. On the right, the error is shown and a map of the uncertainty." />
             <br /><br />
             <p>
-              We observe that where there is error, entropy tends to be higher. We also show a mask for above-average MSE and entropy. The Mask Coverage column shows which regions of the MSE mask are not covered by the entropy mask and should, ideally, be completely black.
+              We observe that where there is error, entropy tends to be higher. We also show a mask for above-average
+              MSE and entropy. The Mask Coverage column shows which regions of the MSE mask are not covered by the
+              entropy mask and should, ideally, be completely black.
             </p>
           </div>
         </div>
@@ -345,6 +383,59 @@
           <div class="column is-four-fifths">
             <div class="content">
               <h2 class="title is-3">Method</h2>
+              <div class="content">
+                <h3 class="title is-4">Uncertainty as Entropy</h3>
+                <p>We use statistical entropy on the likelihood of BRDF parameters to
+                  quantify uncertainty. While other methods test the likelihood function around a found optimum, our
+                  method takes a global perspective on all possible BRDF parameter combinations. This is tractable due to frequency analysis.</p>
+                <p>We show three examples of likelihood functions for different incoming and outgoing radiance.
+                  The red dot marks the ground-truth BRDF parameters and the title (H=...) shows the entropy.
+                </p>
+                <img src="static/images/entropy.png"
+                  alt="An image showing three plots representing a likelihood and the corresponding entropy." />
+                <div class="columns">
+                  <div class="column">
+                    <p>
+                      The left likelihood function shows incoming light for a dirac delta light source (constant in
+                      the spherical harmonic domain) and we see that entropy is low (H=0.25); we can be very certain
+                      about the BRDF recovery.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p>
+                      In the center likelihood function, the light only has amplitude in low frequencies and many roughness values are
+                      equally likely. The higher entropy (H=0.69) is associated with higher uncertainty, which is in line with the
+                      conclusions from Ramamoorthi and Hanrahan (2001).
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p>
+                      The right likelihood function corresponds to a material with very low specular reflectance, resulting in high entropy
+                      (H=0.87) and thus high uncertainty.
+                    </p>
+                  </div>
+                </div>
+
+                <hr /><br />
+
+                <p>Computing entropy can be extremely expensive, since we need to evaluate the entire parameter space for all viewpoints. Therefore, we propose to accelerate this evaluation in the frequency domain.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End signal processing recap -->
+
+  <!--Contributions overview -->
+  <section class="section hero is-small" id="method">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-left">
+        <div class="columns is-centered has-text-left">
+          <div class="column is-four-fifths">
+            <div class="content">
+              <h2 class="title is-3">Frequency Analysis</h2>
               <div class="columns">
                 <div class="column is-8">
                   <div class="content">
@@ -363,21 +454,10 @@
                     alt="An image that shows the reflection equation as a convolution of the BRDF kernel with the incoming light over the incoming- and outgoing light directions at a point on the surface." />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--End signal processing recap -->
+              
 
-  <!--Contributions overview -->
-  <section class="section hero is-small" id="method">
-    <div class="hero-body">
-      <div class="container is-max-desktop has-text-left">
-        <div class="columns is-centered has-text-left">
-          <div class="column is-four-fifths">
-            <div class="content">
+              <hr /><br />
+
               <div class="columns">
                 <div class="column is-8">
                   <div class="content">
@@ -420,49 +500,7 @@
                   invariant to rotations of local coordinate frame (here, rotated normals).</p>
                 <img src="static/images/power_spectrum.png"
                   alt="An image showing three plots, representing power spectra. The first plot is the power spectrum of the incoming light, the second plot of the BRDF and the third of the outgoing light. On the second plot, the graph shows alternative plots for different parameter combinations." />
-              </div>
-
-              <hr /><br />
-
-              <div class="content">
-                <h3 class="title is-4">Uncertainty as Entropy</h3>
-                <p>Our final contribution is to use statistical entropy on the likelihood of BRDF parameters to
-                  quantify uncertainty. While other methods test the likelihood function around a found optimum, our
-                  method takes a global perspective on all possible BRDF parameter combinations. This is tractable due
-                  to our power spectrum approximation.</p>
-                <p>We show three examples of power spectra for incoming and outgoing radiance,
-                  their corresponding likelihood and entropy in the adjacent figure.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-body">
-      <div class="container is-max-desktop has-text-left">
-        <div class="columns">
-          <div class="column is-7">
-            <img src="static/images/entropy.png"
-              alt="An image showing three plots representing a likelihood and the corresponding entropy." />
-          </div>
-          <div class="column is-5">
-            <div class="content">
-              <p>
-                The left column shows incoming light for a dirac delta light source (constant in
-                the spherical harmonic domain) and we see that entropy is low (H=0.25); we can be very certain
-                about the BRDF recovery.
-              </p>
-              <p>
-                In the center column, the light only has amplitude in low frequencies and many roughness values are
-                equally likely.
-                The higher entropy (H=0.69) is associated with higher uncertainty, which is in line with the
-                conclusions from Ramamoorthi and Hanrahan (2001).
-              </p>
-              <p>
-                The right column shows a material with very low specular reflectance, resulting in high entropy
-                (H=0.87) and thus high uncertainty.
-              </p>
+              </div>              
             </div>
           </div>
         </div>
@@ -476,43 +514,60 @@
     <div class="hero-body">
       <div class="container is-max-desktop has-text-left">
         <div class="columns is-centered has-text-left">
-          <div class="column is-four-fifths">
-            <div class="content">
-              <h2 class="title is-3">Find out more</h2>
-              <div class="publication-links">
-                <!-- Arxiv PDF link -->
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper (coming soon)</span>
-                  </a>
-                </span>
+          <div class="content">
+            <h2 class="title is-3">Find out more</h2>
+            <div class="publication-links">
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (coming soon)</span>
+                </a>
+              </span>
 
-                <!-- Supplementary PDF link -->
-                <span class="link-block">
-                  <a href="/suppmat" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-plus"></i>
-                    </span>
-                    <span>Supplementary</span>
-                  </a>
-                </span>
+              <!-- Appendix PDF link -->
+              <span class="link-block">
+                <a href="suppmat/appendix.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Appendix</span>
+                </a>
+              </span>
 
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (to be released)</span>
-                  </a>
-                </span>
+              <!-- Supplementary website link -->
+              <span class="link-block">
+                <a href="suppmat/index.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
 
-              </div>
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/rubenwiersma/svbrdf_uncertainty" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (to be released)</span>
+                </a>
+              </span>
+
+              <!-- BibTex link -->
+              <span class="link-block">
+                <a href="#bibtex" class="internal-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-quote-left"></i>
+                  </span>
+                  <span>Cite us</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -525,8 +580,25 @@
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
+      <a id="bibtex"></a>
       <h2 class="title">BibTeX</h2>
-      <pre><code>Coming soon</code></pre>
+      <pre><code>
+        @inproceedings{wiersma2025svbrdfuncertainty,
+            author = {Wiersma, Ruben and Philip, Julien and Hašan, Miloš and Mullia, Krishna and Luan, Fujun and
+            Eisemann, Elmar and Deschaintre, Valentin},
+          title = {Uncertainty for SVBRDF Acquisition using Frequency Analysis},
+          year = {2025},
+          isbn = {979-8-4007-1540-2/2025/08},
+          publisher = {Association for Computing Machinery},
+          address = {New York, NY, USA},
+          url = {https://doi.org/10.1145/3721238.3730592},
+          doi = {10.1145/3721238.3730592},
+          booktitle = {SIGGRAPH Conference Papers '25},
+          articleno = {1}, numpages = {11},
+          location = {Vancouver, BC, CA},
+          series = {SIGGRAPH Conference Papers '25}
+        }
+      </code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
